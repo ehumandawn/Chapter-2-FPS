@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ReactiveTarget : MonoBehaviour {
 	public void ReactToHit () {
+		BasicWanderingAI behavior = GetComponent<BasicWanderingAI>();
+		if (behavior != null) {
+			behavior.SetAlive (false);
+		}
 		StartCoroutine (Die ());
 	}
 
